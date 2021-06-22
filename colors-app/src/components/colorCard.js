@@ -34,8 +34,11 @@ export class ColorCard extends React.Component{
 
         const paletteStyle = {
             width: "25%",
-            margin: "auto",
+            marginLeft: "5%",
             height: "50vh",
+            float: "left",
+            marginBottom: "2em",
+            
             fontFamily: "Helvetica", //if I was being fancy i'd get helvetica nueue
             border: "1px solid black"
 
@@ -45,7 +48,7 @@ export class ColorCard extends React.Component{
 
         if(!this.props.paletteMode){
             return(
-                <div > 
+                <div style = {{alignItems: "center"}}> 
                 <div style = {colorStyles}>
                     <div style={{backgroundColor: this.state.color, height: "80%"}}>
                     </div>
@@ -53,6 +56,7 @@ export class ColorCard extends React.Component{
                         <h2>{this.state.color}</h2>
                     </div>
                 </div>
+
                 <button onClick = {this.generateColor} style = {{margin: "2em"}}>New Color </button>
                 </div>
                 
@@ -61,7 +65,7 @@ export class ColorCard extends React.Component{
         } else {
             //palette version
             return(
-                <div > 
+                <div style={{alignItems: "center"}}> 
                 <div style = {paletteStyle}>
                     <div style={{backgroundColor: this.state.color, height: "80%"}}>
                     </div>
